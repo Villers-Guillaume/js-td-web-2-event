@@ -31,6 +31,15 @@ ELEMENT.addEventListener(EVENEMENT, FONCTION);
 EXERCICE 1 :
 Affiche bonjour dans une boîte de dialogue au clic sur le bouton
 */
+console.log(document.getElementById('hello'));
+
+
+document.getElementById('hello').addEventListener('click', (event)=>{
+    event.currentTarget.classList.toggle('clicked');
+});
+
+
+
 /*
 TRADUCTION :
 Quand l'événement "click" se produit sur l'élément "bouton" de l'interface, exécute la fonction "direBonjour"

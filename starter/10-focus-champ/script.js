@@ -9,9 +9,40 @@ Au focus sur le champ, vide-le et change sa couleur de fond. Lorsqu'on clique en
 */
 
 // Un seul champ
+const field = document.getElementById('prenom');
+field.addEventListener('focus',(event) =>{
+    event.currentTarget.style.backgroundColor = "red";
+});
+field.addEventListener('blur',(event) =>{
+    event.currentTarget.style.backgroundColor = "window";
+});
 
 
 // Deux champs
+function changeBackgroundColorOnFocusId(id) {
+    const field = document.getElementById(id);
+    field.addEventListener('focus',(event) =>{
+        event.currentTarget.style.backgroundColor = "red";
+    });
+    field.addEventListener('blur',(event) =>{
+        event.currentTarget.style.backgroundColor = "window";
+    });
+}
+
+changeBackgroundColorOnFocusId('prenom');
+changeBackgroundColorOnFocusId('nom');
 
 
 // Plusieurs champs
+
+function changeBackgroundColorOnFocus(selector) {
+    const field = document.querySelector(selector);
+    field.addEventListener('focus',(event) =>{
+        event.currentTarget.style.backgroundColor = "red";
+    });
+    field.addEventListener('blur',(event) =>{
+        event.currentTarget.style.backgroundColor = "window";
+    });
+}
+
+changeBackgroundColorOnFocus('p');

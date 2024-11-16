@@ -10,6 +10,15 @@
    * 2°) avec une fonction anonyme
    * 3°) avec une arrow fonction et une expression conditionnelle
 */
+const prenomUser = document.getElementById('prenom').value;
+
+document.getElementById('hello').addEventListener('click', ()=>{
+    if (prenomUser) {
+        console.log(`Bonjour, ${prenomUser}`);
+    } else {
+        console.log("Bonjour, toi ! Tu ne veux pas me dire comment tu t'appelles ?")
+    }
+    })
 
 
 // Autre écriture

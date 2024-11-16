@@ -27,6 +27,20 @@ La méthode classique est de créer une variable temporaire, comme ceci :
 
 
 
+
+(
+    function (){
+        const app = {
+            imgElement: document.querySelector("img"),
+            init() {
+                this.imgElement.addEventListener("click", function (event) {
+                    [event.currentTarget.src, event.currentTarget.dataset.hover] = [event.currentTarget.dataset.hover, event.currentTarget.src];
+                });
+            },
+        }
+        app.init();
+    }
+)();
 // version de base
 
 

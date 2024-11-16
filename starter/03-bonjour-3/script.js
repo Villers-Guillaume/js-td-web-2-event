@@ -4,7 +4,10 @@ Au clic sur le bouton,
 	sous le bouton (dans la section de classe "display") ;
 - fais disparaître le bouton
 */
-
+document.getElementById('hello').addEventListener('click', (event)=>{
+    document.querySelector(".display").insertAdjacentHTML("afterbegin", "<img src='bonjour.jpg'></img");
+    console.log(event.currentTarget);
+})
 
 
 /*
