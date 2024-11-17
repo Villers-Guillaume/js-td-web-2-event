@@ -10,20 +10,28 @@
    * 2°) avec une fonction anonyme
    * 3°) avec une arrow fonction et une expression conditionnelle
 */
-const prenomUser = document.getElementById('prenom').value;
 
-document.getElementById('hello').addEventListener('click', ()=>{
-    if (prenomUser) {
-        console.log(`Bonjour, ${prenomUser}`);
-    } else {
-        console.log("Bonjour, toi ! Tu ne veux pas me dire comment tu t'appelles ?")
+(
+    function () {
+
+        const getPrenomAndSayHello = {
+            prenomUser:document.getElementById("prenom").value,
+            buttonElement:document.getElementById("hello").addEventListener("click", () => {
+                console.log(this.prenomUser)
+                if (this.prenomUser) {
+                    document.querySelector('.material').insertAdjacentHTML('beforeend', `Bonjour, ${this.prenomUser}`);
+                } else {
+                    document.querySelector('.material').insertAdjacentHTML('beforeend', "Bonjour, toi ! Tu ne veux pas me dire comment tu t'appelles ?");
+                }
+            }),
+        }
     }
-    })
+)();
+
+
 
 
 // Autre écriture
-
-
 
 
 // Plus court : écriture ES6 avec expression conditionnelle
